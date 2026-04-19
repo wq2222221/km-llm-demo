@@ -1,0 +1,41 @@
+{
+  "question": "Estimate the relative progression-free survival effect of niraparib versus olaparib in platinum-sensitive recurrent ovarian cancer by using placebo as the common comparator.",
+  "method_summary": "This page now uses a simple Bucher-style anchored indirect comparison. Study AB is niraparib versus placebo, and the second study is entered in the opposite orientation as olaparib versus placebo (that is, C versus B). Because the second effect is C vs B rather than B vs C, the indirect comparison is computed as log(HR_AC) = log(HR_AB) - log(HR_CB).",
+  "effect_measure": "Hazard ratio (PFS)",
+  "formula": "log(HR_AC) = log(HR_AB) - log(HR_CB)",
+  "study_ab": {
+    "label": "Study AB",
+    "comparison": "Niraparib vs Placebo (ENGOT-OV16/NOVA, germline BRCA cohort)",
+    "design": "Randomized, double-blind, placebo-controlled phase 3 trial",
+    "outcome": "Progression-free survival",
+    "km_figure_available": "Yes",
+    "status": "Selected",
+    "notes": "Reported median PFS 21.0 vs 5.5 months; HR 0.27 (95% CI 0.17-0.41)."
+  },
+  "study_bc": {
+    "label": "Study CB",
+    "comparison": "Olaparib vs Placebo (SOLO2/ENGOT-Ov21; entered as C vs B)",
+    "design": "Double-blind, randomized, placebo-controlled phase 3 trial",
+    "outcome": "Progression-free survival",
+    "km_figure_available": "Yes",
+    "status": "Selected",
+    "notes": "Reported median PFS 19.1 vs 5.5 months; HR 0.30 (95% CI 0.22-0.41)."
+  },
+  "assumption_checks": [
+    "Both studies are maintenance trials in platinum-sensitive recurrent ovarian cancer with placebo as comparator.",
+    "The comparison is most defensible when restricted to BRCA-mutated populations, because the NOVA estimate used here is from the germline BRCA cohort and SOLO2 enrolled BRCA1/2-mutated patients.",
+    "This is still a crude indirect comparison because trial eligibility, prior therapy patterns, and BRCA subgroup definitions are not perfectly identical.",
+    "The estimate below uses published PFS hazard ratios only and does not apply MAIC, STC, or patient-level adjustment."
+  ],
+  "indirect_result": {
+    "status": "Approximate from published HRs",
+    "common_comparator": "Placebo",
+    "log_hr_ab": "-1.3093",
+    "se_ab": "0.2246",
+    "log_hr_bc": "-1.2040",
+    "se_bc": "0.1588",
+    "hr_ac": "0.90",
+    "ci_95": "0.52 to 1.54",
+    "note": "Interpreted as niraparib vs olaparib for PFS under a simple Bucher-style anchored comparison. Because the interval crosses 1.0, this crude indirect estimate does not show a clear difference between the two maintenance strategies."
+  }
+}

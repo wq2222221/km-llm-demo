@@ -1,0 +1,12 @@
+{
+  "case_id": "case1",
+  "title": "ICON7 high-risk subgroup overall survival",
+  "summary": "Cached demo based on ICON7 Figure 2C, showing overall survival in the predefined high-risk subgroup of newly diagnosed ovarian cancer patients.",
+  "disease": "Newly diagnosed ovarian cancer",
+  "treatments": [
+    "Standard chemotherapy",
+    "Chemotherapy + bevacizumab"
+  ],
+  "source_note": "Oza et al., Standard chemotherapy with or without bevacizumab for women with newly diagnosed ovarian cancer (ICON7): overall survival results of a phase 3 randomised trial, Figure 2C.",
+  "has_extra_credit": false
+}

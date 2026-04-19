@@ -1,0 +1,5 @@
+{
+  "test_statistic": 4.7093,
+  "p_value": 0.03,
+  "note": "P-value is reported in the ICON7 paper for the high-risk subgroup overall survival comparison. The test_statistic here is an approximate chi-square(1) value back-calculated from p=0.03 for display purposes."
+}

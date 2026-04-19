@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# macOS
+.DS_Store
+
+# Jupyter / misc
+.ipynb_checkpoints/
+
+# Optional local output
+*.log

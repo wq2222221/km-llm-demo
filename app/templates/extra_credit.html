@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Extra Credit{% endblock %}
+{% block content %}
+<h2>Extra Credit: Indirect Comparison (A vs C)</h2>
+
+{% if extra_credit %}
+  <p>{{ extra_credit.question }}</p>
+
+  <section>
+    <h3>Method</h3>
+    <div class="summary-box">
+      <p>{{ extra_credit.method_summary }}</p>
+      <p><strong>Effect measure:</strong> {{ extra_credit.effect_measure }}</p>
+      <p><strong>Formula used:</strong> {{ extra_credit.formula }}</p>
+    </div>
+  </section>
+
+  <section>
+    <h3>Candidate studies</h3>
+    <div class="card-grid">
+      <article class="card">
+        <h4>{{ extra_credit.study_ab.label }}</h4>
+        <p><strong>Comparison:</strong> {{ extra_credit.study_ab.comparison }}</p>
+        <p><strong>Design:</strong> {{ extra_credit.study_ab.design }}</p>
+        <p><strong>Outcome:</strong> {{ extra_credit.study_ab.outcome }}</p>
+        <p><strong>KM figure available:</strong> {{ extra_credit.study_ab.km_figure_available }}</p>
+        <p><strong>Status:</strong> {{ extra_credit.study_ab.status }}</p>
+        <p>{{ extra_credit.study_ab.notes }}</p>
+      </article>
+
+      <article class="card">
+        <h4>{{ extra_credit.study_bc.label }}</h4>
+        <p><strong>Comparison:</strong> {{ extra_credit.study_bc.comparison }}</p>
+        <p><strong>Design:</strong> {{ extra_credit.study_bc.design }}</p>
+        <p><strong>Outcome:</strong> {{ extra_credit.study_bc.outcome }}</p>
+        <p><strong>KM figure available:</strong> {{ extra_credit.study_bc.km_figure_available }}</p>
+        <p><strong>Status:</strong> {{ extra_credit.study_bc.status }}</p>
+        <p>{{ extra_credit.study_bc.notes }}</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h3>Assumption checks</h3>
+    <div class="summary-box">
+      <ul>
+        {% for item in extra_credit.assumption_checks %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h3>Indirect comparison result</h3>
+    <div class="summary-box">
+      <p><strong>Status:</strong> {{ extra_credit.indirect_result.status }}</p>
+      <p><strong>Common comparator:</strong> {{ extra_credit.indirect_result.common_comparator }}</p>
+      <p><strong>log(HR_AB):</strong> {{ extra_credit.indirect_result.log_hr_ab }}</p>
+      <p><strong>SE_AB:</strong> {{ extra_credit.indirect_result.se_ab }}</p>
+      <p><strong>log(HR_CB):</strong> {{ extra_credit.indirect_result.log_hr_bc }}</p>
+      <p><strong>SE_CB:</strong> {{ extra_credit.indirect_result.se_bc }}</p>
+      <p><strong>HR_AC (indirect):</strong> {{ extra_credit.indirect_result.hr_ac }}</p>
+      <p><strong>95% CI:</strong> {{ extra_credit.indirect_result.ci_95 }}</p>
+      <p>{{ extra_credit.indirect_result.note }}</p>
+    </div>
+  </section>
+{% else %}
+  <p>No extra credit data file found yet.</p>
+{% endif %}
+{% endblock %}

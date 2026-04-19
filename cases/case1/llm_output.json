@@ -1,0 +1,52 @@
+{
+  "num_groups": 2,
+  "group_names": [
+    "Bevacizumab",
+    "Standard chemotherapy"
+  ],
+  "x_axis_label": "Months since randomisation",
+  "x_axis_max": 60,
+  "y_axis_scale": "0-100",
+  "has_risk_table": true,
+  "risk_table_times": [
+    0,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+  ],
+  "legend_info": {
+    "curve_colors_detected": [
+      "red",
+      "blue"
+    ],
+    "group_color_mapping_confirmed": false,
+    "note": "Color mapping to groups uncertain from figure alone."
+  },
+  "curve_quality_flags": [
+    "Group names derived from risk table below plot, not legend.",
+    "Curve colors red and blue detected but exact group-color mapping not explicitly confirmed."
+  ],
+  "risk_table_values": {
+    "Bevacizumab": [
+      248,
+      238,
+      224,
+      180,
+      135,
+      95,
+      27
+    ],
+    "Standard chemotherapy": [
+      254,
+      238,
+      208,
+      156,
+      101,
+      82,
+      21
+    ]
+  }
+}

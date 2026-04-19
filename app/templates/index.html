@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home - KM-LLM Demo{% endblock %}
+{% block content %}
+<section>
+  <h2>Kaplan–Meier Curve Extraction Demo</h2>
+  <p>
+    This website shows cached outputs for an LLM-assisted workflow:
+    figure parsing, coordinate correction, pseudo-IPD reconstruction,
+    and survival analysis.
+  </p>
+</section>
+
+<section>
+  <h3>Demo Cases</h3>
+  <div class="card-grid">
+    {% for case in cases %}
+    <article class="card">
+      <h4>{{ case.title }}</h4>
+      <p>{{ case.summary }}</p>
+      <a class="btn" href="/cases/{{ case.case_id }}">Open case</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

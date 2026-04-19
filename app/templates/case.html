@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ case.title }}{% endblock %}
+{% block content %}
+<h2>{{ case.title }}</h2>
+<p>{{ case.summary }}</p>
+
+{% if case_summary %}
+<section>
+  <h3>Case summary</h3>
+  <div class="summary-box">{{ case_summary }}</div>
+</section>
+{% endif %}
+
+<section>
+  <h3>Raw figure</h3>
+  <img src="/case-files/{{ case_id }}/raw_figure.png" alt="Raw KM figure" class="img-block">
+</section>
+
+<section>
+  <h3>LLM extraction output</h3>
+  <p><a href="/case-files/{{ case_id }}/llm_output.json" target="_blank">Open llm_output.json</a></p>
+</section>
+
+<section>
+  <h3>Corrected curve points</h3>
+  <p><a href="/case-files/{{ case_id }}/corrected_points.csv" target="_blank">Open corrected_points.csv</a></p>
+</section>
+
+<section>
+  <h3>Reconstructed pseudo-IPD</h3>
+  <p><a href="/case-files/{{ case_id }}/reconstructed_ipd.csv" target="_blank">Open reconstructed_ipd.csv</a></p>
+</section>
+
+<section>
+  <h3>KM plot and log-rank result</h3>
+  <img src="/case-files/{{ case_id }}/km_plot.png" alt="KM plot" class="img-block">
+  {% if logrank %}
+    <p>Test statistic: {{ logrank.test_statistic }}</p>
+    <p>P-value: {{ logrank.p_value }}</p>
+    {% if logrank.note %}
+      <p>{{ logrank.note }}</p>
+    {% endif %}
+  {% endif %}
+</section>
+{% endblock %}

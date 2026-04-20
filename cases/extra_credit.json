@@ -1,6 +1,6 @@
 {
   "question": "Estimate the relative progression-free survival effect of niraparib versus olaparib in platinum-sensitive recurrent ovarian cancer by using placebo as the common comparator.",
-  "method_summary": "This page now uses a simple Bucher-style anchored indirect comparison. Study AB is niraparib versus placebo, and the second study is entered in the opposite orientation as olaparib versus placebo (that is, C versus B). Because the second effect is C vs B rather than B vs C, the indirect comparison is computed as log(HR_AC) = log(HR_AB) - log(HR_CB).",
+  "method_summary": "This page uses a simple Bucher-style anchored indirect comparison. Study AB is niraparib versus placebo, and the second study is entered in the opposite orientation as olaparib versus placebo (that is, C versus B). Because the second effect is C vs B rather than B vs C, the indirect comparison is computed as log(HR_AC) = log(HR_AB) - log(HR_CB).",
   "effect_measure": "Hazard ratio (PFS)",
   "formula": "log(HR_AC) = log(HR_AB) - log(HR_CB)",
   "study_ab": {
@@ -10,6 +10,8 @@
     "outcome": "Progression-free survival",
     "km_figure_available": "Yes",
     "status": "Selected",
+    "pmid": "27717299",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/27717299/",
     "notes": "Reported median PFS 21.0 vs 5.5 months; HR 0.27 (95% CI 0.17-0.41)."
   },
   "study_bc": {
@@ -19,6 +21,8 @@
     "outcome": "Progression-free survival",
     "km_figure_available": "Yes",
     "status": "Selected",
+    "pmid": "28754483",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/28754483/",
     "notes": "Reported median PFS 19.1 vs 5.5 months; HR 0.30 (95% CI 0.22-0.41)."
   },
   "assumption_checks": [

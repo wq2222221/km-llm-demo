@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import markdown as md
 
 from app.config import STATIC_DIR, TEMPLATES_DIR, CASES_DIR
 from app.services.case_loader import (
@@ -38,6 +39,7 @@ def case_detail(request: Request, case_id: str):
 
     logrank = load_logrank_result(case_id)
     case_summary = load_case_summary(case_id)
+    case_summary_html = md.markdown(case_summary) if case_summary else None
 
     return templates.TemplateResponse(
         request=request,
@@ -45,7 +47,7 @@ def case_detail(request: Request, case_id: str):
         context={
             "case": meta,
             "logrank": logrank,
-            "case_summary": case_summary,
+            "case_summary_html": case_summary_html,
             "case_id": case_id,
         },
     )

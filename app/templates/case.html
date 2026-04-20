@@ -4,10 +4,10 @@
 <h2>{{ case.title }}</h2>
 <p>{{ case.summary }}</p>
 
-{% if case_summary %}
+{% if case_summary_html %}
 <section>
   <h3>Case summary</h3>
-  <div class="summary-box">{{ case_summary }}</div>
+  <div class="summary-box">{{ case_summary_html | safe }}</div>
 </section>
 {% endif %}
 
